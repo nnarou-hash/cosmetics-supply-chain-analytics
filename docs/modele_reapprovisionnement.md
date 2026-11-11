@@ -57,7 +57,7 @@ Le stock de sécurité de 10 jours est retenu pour l'illustration du tableau de 
 3. Les quantités sont livrées intégralement à la date prévue ; pas de contrainte de capacité, de quantité minimale, de multiple de colis ou de calendrier ouvré.
 4. La revue se fait au premier jour de chaque mois ; un contrôle plus fréquent pourrait changer les résultats.
 5. L'horizon commence avec un stock ajusté pour neutraliser le démarrage ; l'ajustement doit être pris en compte dans toute comparaison de stock.
-6. Les coûts de stock, de commande, de transport, d'obsolescence et de rupture ne sont pas modélisés. Un taux de service supérieur n'implique donc pas automatiquement un profit ou un coût total meilleur.
+6. Une estimation pédagogique des coûts de portage, de commande et de marge perdue est désormais disponible dans `docs/analyse_couts_reappro.md`. Elle dépend d'hypothèses non observées et ne constitue pas un coût complet ; elle n'inclut pas notamment tous les frais de transport, d'obsolescence et les coûts indirects de rupture.
 7. Les demandes, prévisions, stocks et délais sont tous synthétiques. Les résultats sont des illustrations pédagogiques, pas des estimations de performance réelle.
 
 ## Reproduire
