@@ -30,6 +30,9 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 - WAPE : 12,7 % (erreur absolue pondérée) ;
 - couverture moyenne historique : 0,28 mois.
 
+### Analyse économique du réapprovisionnement
+Sous des hypothèses pédagogiques explicites (coût d'achat de 40 % du prix de vente, portage annuel de 20 %, 12 € par ligne de commande et marge perdue de 60 %), le coût pertinent estimé sur 36 mois est de **408 467 €** pour le stock uniforme, **365 000 €** pour ABC/XYZ et **345 778 €** pour la variante renforcée. Ces valeurs ne sont pas des coûts réels : les achats sont affichés séparément, et les hypothèses sont testées en sensibilité. Voir `docs/analyse_couts_reappro.md`.
+
 ### Segmentation ABC/XYZ
 La segmentation classe les 100 SKU selon leur valeur de demande (A : 79,7 % de la valeur ; B : 15,1 % ; C : 5,2 %) et leur variabilité mensuelle (X : 33 SKU ; Y : 33 ; Z : 34). La politique de sécurité différenciée atteint un taux de service simulé de **98,6 %**, contre 98,4 % avec 10 jours uniformes. Elle réduit la demande non satisfaite de 8 155 à 6 768 unités, avec une couverture moyenne de fin de mois de 26,0 jours. Voir `docs/segmentation_abc_xyz.md`.
 
@@ -76,19 +79,25 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 │   ├── comparaison_reappro_uniforme_vs_abc_xyz.csv
 │   ├── synthese_mensuelle_abc_xyz.csv
 │   ├── politique_stock_securite_abc_xyz.csv
-│   └── sensibilite_politique_abc_xyz.csv
+│   ├── sensibilite_politique_abc_xyz.csv
+│   ├── comparaison_couts_reappro.csv
+│   ├── sensibilite_couts_reappro.csv
+│   ├── synthese_mensuelle_couts.csv
+│   └── hypotheses_couts.csv
 └── src/
     ├── validate_data.py
     ├── analyse_exploratoire.py
     ├── simuler_reapprovisionnement.py
-    └── simuler_politique_abc_xyz.py
+    ├── simuler_politique_abc_xyz.py
+    └── analyser_couts_reappro.py
 ```
 
 ## Reproduire les analyses
 `python src/validate_data.py`  
 `python src/analyse_exploratoire.py`  
 `python src/simuler_reapprovisionnement.py`  
-`python src/simuler_politique_abc_xyz.py`
+`python src/simuler_politique_abc_xyz.py`  
+`python src/analyser_couts_reappro.py`
 
 ---
 *Projet pédagogique. Tous les résultats sont simulés et illustratifs.*
