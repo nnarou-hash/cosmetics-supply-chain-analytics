@@ -201,6 +201,26 @@ La classe A, qui pèse près de 80 % de la valeur de demande, bénéficie de la 
 - Le stock initial du scénario ABC/XYZ est ajusté de 677 unités pour neutraliser l'effet de démarrage. Cet ajustement n'est pas une réception observée.
 - Les coûts de possession, de commande, de transport, d'obsolescence et de rupture ne sont pas valorisés.
 
+## 11. Analyse économique du réapprovisionnement
+
+Une valorisation indicative compare le stock uniforme de 10 jours, la politique ABC/XYZ et une politique ABC/XYZ renforcée. Les hypothèses centrales sont : coût d'achat à 40 % du prix de vente simulé, taux annuel de possession de 20 %, 12 € par ligne de commande et marge perdue égale à 60 % du prix de vente sur les unités non servies.
+
+| Politique | Coût pertinent sur 36 mois | Moyenne annuelle | Écart vs uniforme |
+|---|---:|---:|---:|
+| Stock uniforme · 10 jours | 408 467 € | 136 156 € | — |
+| Politique ABC/XYZ | 365 000 € | 121 667 € | −43 467 € (−10,6 %) |
+| ABC/XYZ renforcée | 345 778 € | 115 259 € | −62 689 € (−15,3 %) |
+
+Le coût pertinent additionne le portage du stock, la passation des commandes et la marge estimée perdue. Les achats de marchandises sont exclus et présentés séparément. La politique ABC/XYZ accroît le coût de portage par rapport au stock uniforme, mais réduit davantage la marge perdue estimée.
+
+Les sept variantes testées (portage faible/élevé, coût de commande faible/élevé, marge perdue faible/élevée, plus le scénario central) conservent le même classement des politiques. Ce test univarié ne remplace pas la calibration de coûts réels ni une variation simultanée des paramètres.
+
+**Limites de comparabilité :** l'historique utilise un stock moyen mensuel approché par (stock d'ouverture + stock de clôture) / 2 et une ligne de commande estimée par SKU-mois positif. Les simulations recalculent les stocks au jour le jour. Le coût historique est donc un repère approximatif, non strictement comparable aux scénarios.
+
+Les coûts, prix, taux et délais sont fictifs. Le résultat ne correspond ni à un coût comptable complet ni à une économie constatée.
+
+Voir [l'analyse économique détaillée](analyse_couts_reappro.md).
+
 ## Reproductibilité
 
 Depuis la racine du dépôt :
