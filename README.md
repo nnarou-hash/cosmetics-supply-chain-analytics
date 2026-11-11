@@ -12,6 +12,7 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 2. **Stocks et prévisions** : couverture, ruptures, demande vs prévisions et SKU à surveiller.
 3. **Qualité des données** : valeurs manquantes, doublons, incohérences et contrôles.
 4. **Simulation de réapprovisionnement** : impact du stock de sécurité et des délais fournisseurs sur le taux de service et les ruptures.
+5. **Segmentation ABC/XYZ** : segmentation de la valeur de demande et de la variabilité, puis test de stocks de sécurité différenciés.
 
 ## Jeu de données
 - 3 604 lignes brutes, dont 4 doublons volontairement ajoutés ;
@@ -28,6 +29,9 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 - précision des prévisions pondérée : 87,3 % ;
 - WAPE : 12,7 % (erreur absolue pondérée) ;
 - couverture moyenne historique : 0,28 mois.
+
+### Segmentation ABC/XYZ
+La segmentation classe les 100 SKU selon leur valeur de demande (A : 79,7 % de la valeur ; B : 15,1 % ; C : 5,2 %) et leur variabilité mensuelle (X : 33 SKU ; Y : 33 ; Z : 34). La politique de sécurité différenciée atteint un taux de service simulé de **98,6 %**, contre 98,4 % avec 10 jours uniformes. Elle réduit la demande non satisfaite de 8 155 à 6 768 unités, avec une couverture moyenne de fin de mois de 26,0 jours. Voir `docs/segmentation_abc_xyz.md`.
 
 ### Scénario de réapprovisionnement
 Une simulation distincte applique une revue mensuelle et les délais fournisseurs de chaque SKU. Avec 10 jours de stock de sécurité, le taux de service simulé atteint **98,4 %**, contre 91,5 % dans l'historique de référence ; le taux de rupture passe de **37,3 % à 10,1 %** des SKU-mois. La couverture moyenne de fin de mois augmente à **24,9 jours**. Il s'agit d'un arbitrage disponibilité / immobilisation, pas d'une économie financière démontrée.
@@ -56,6 +60,7 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 │   └── cosmetics_supply_chain_dashboard.html
 ├── docs/
 │   ├── modele_reapprovisionnement.md
+│   ├── segmentation_abc_xyz.md
 │   ├── data_dictionary.md
 │   ├── data_quality_audit.md
 │   └── analyse_exploratoire.md
@@ -68,13 +73,15 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 └── src/
     ├── validate_data.py
     ├── analyse_exploratoire.py
-    └── simuler_reapprovisionnement.py
+    ├── simuler_reapprovisionnement.py
+    └── simuler_politique_abc_xyz.py
 ```
 
 ## Reproduire les analyses
 `python src/validate_data.py`  
 `python src/analyse_exploratoire.py`  
-`python src/simuler_reapprovisionnement.py`
+`python src/simuler_reapprovisionnement.py`  
+`python src/simuler_politique_abc_xyz.py`
 
 ---
 *Projet pédagogique. Tous les résultats sont simulés et illustratifs.*
