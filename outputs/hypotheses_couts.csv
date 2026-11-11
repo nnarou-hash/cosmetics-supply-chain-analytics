@@ -1,0 +1,7 @@
+Parametre,Hypothese_Centrale,Sensibilite,Utilisation
+Coût d'achat unitaire,40 % du prix de vente,Non varié dans cette analyse,Valorisation indicative du stock et des achats
+Taux annuel de possession,20 % de la valeur d'achat du stock moyen,10 % à 30 %,Coût de portage sur 36 mois
+Coût par ligne de commande,12 € par ligne SKU,6 € à 24 €,Coût de passation des commandes
+Marge perdue sur demande non servie,60 % du prix de vente,40 % à 70 %,Coût d'opportunité des ventes perdues
+Achats,Quantités commandées × coût d'achat estimé,Présentés séparément,Besoin d'achat indicatif, exclu du coût pertinent
+Horizon,36 mois, janvier 2024 à décembre 2026,Sans annualisation des coûts cumulés,Comparaison sur un même horizon
