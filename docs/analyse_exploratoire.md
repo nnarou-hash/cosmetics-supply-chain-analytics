@@ -11,7 +11,8 @@
 | Demande simulée | 499 288 |
 | Taux de service | 91,5 % |
 | Taux de rupture (SKU-mois) | 37,3 % |
-| WAPE | 12,7 % |
+| Précision des prévisions pondérée (1 − WAPE) | 87,3 % |
+| WAPE (erreur absolue pondérée) | 12,7 % |
 | Biais de prévision | +1,7 % |
 | Couverture moyenne | 0,28 mois (environ 8,5 jours) |
 | SKU-mois avec couverture inférieure à 0,75 mois | 3 121 (86,7 %) |
