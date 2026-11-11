@@ -22,10 +22,20 @@ OUTPUT = ROOT / "outputs"
 OUTPUT.mkdir(exist_ok=True)
 
 JOURS_REVUE = 30
-POLITIQUE = {
+POLITIQUE_INITIALE = {
     "AX": 10, "AY": 12, "AZ": 15,
     "BX": 7, "BY": 9, "BZ": 12,
     "CX": 3, "CY": 5, "CZ": 8,
+}
+POLITIQUE = {
+    "AX": 10, "AY": 12, "AZ": 15,
+    "BX": 8, "BY": 10, "BZ": 13,
+    "CX": 7, "CY": 9, "CZ": 12,
+}
+POLITIQUE_RENFORCEE = {
+    "AX": 12, "AY": 14, "AZ": 17,
+    "BX": 8, "BY": 10, "BZ": 13,
+    "CX": 7, "CY": 9, "CZ": 12,
 }
 
 
@@ -287,7 +297,15 @@ def main():
     ) / len(lignes)
 
     uniforme = simuler(profils, lambda x: 10)
-    differencie = simuler(profils, lambda x: x["Jours_Stock_Securite"])
+    initiale = simuler(
+        profils, lambda x: POLITIQUE_INITIALE[x["Classe_ABC_XYZ"]]
+    )
+    differencie = simuler(
+        profils, lambda x: POLITIQUE[x["Classe_ABC_XYZ"]]
+    )
+    renforce = simuler(
+        profils, lambda x: POLITIQUE_RENFORCEE[x["Classe_ABC_XYZ"]]
+    )
 
     segmentation = []
     for p in sorted(profils, key=lambda x: (-x["Valeur_Demande_EUR"], x["SKU"])):
@@ -300,7 +318,7 @@ def main():
             "Part_Valeur_Demande": round(p["Part_Valeur_Demande"], 6),
             "Part_Cumulee_Valeur": round(p["Part_Cumulee_Valeur"], 6),
             "CV_Demande_Mensuelle": round(p["CV_Demande_Mensuelle"], 6),
-            "Jours_Stock_Securite": p["Jours_Stock_Securite"],
+            "Jours_Stock_Securite": POLITIQUE[p["Classe_ABC_XYZ"]],
             "Delai_Fournisseur_Moyen_Jours": round(p["Delai_Fournisseur_Moyen_Jours"], 1),
             "Taux_Service_Historique": round(p["Ventes_Historiques"] / p["Demande_Historique"], 6),
             "Taux_Rupture_Historique": round(p["Ruptures_Historiques"] / len(p["lignes"]), 6),
@@ -354,7 +372,15 @@ def main():
          "Nombre_Commandes": uniforme["commandes"],
          "Unites_Commandees": uniforme["unites_commandees"],
          "Stock_Initial_Supplementaire": uniforme["stock_initial_ajoute"]},
-        {"Scenario": "Politique différenciée ABC/XYZ",
+        {"Scenario": "Première matrice ABC/XYZ",
+         "Taux_Service": initiale["taux_service"],
+         "Taux_Rupture_SKU_Mois": initiale["taux_rupture"],
+         "Demande_Non_Satisfaite": initiale["demande_non_satisfaite"],
+         "Couverture_Moyenne_Fin_Mois_Jours": initiale["couverture_cloture_jours"],
+         "Nombre_Commandes": initiale["commandes"],
+         "Unites_Commandees": initiale["unites_commandees"],
+         "Stock_Initial_Supplementaire": initiale["stock_initial_ajoute"]},
+        {"Scenario": "Politique ABC/XYZ retenue",
          "Taux_Service": differencie["taux_service"],
          "Taux_Rupture_SKU_Mois": differencie["taux_rupture"],
          "Demande_Non_Satisfaite": differencie["demande_non_satisfaite"],
@@ -362,20 +388,41 @@ def main():
          "Nombre_Commandes": differencie["commandes"],
          "Unites_Commandees": differencie["unites_commandees"],
          "Stock_Initial_Supplementaire": differencie["stock_initial_ajoute"]},
+        {"Scenario": "Politique renforcée",
+         "Taux_Service": renforce["taux_service"],
+         "Taux_Rupture_SKU_Mois": renforce["taux_rupture"],
+         "Demande_Non_Satisfaite": renforce["demande_non_satisfaite"],
+         "Couverture_Moyenne_Fin_Mois_Jours": renforce["couverture_cloture_jours"],
+         "Nombre_Commandes": renforce["commandes"],
+         "Unites_Commandees": renforce["unites_commandees"],
+         "Stock_Initial_Supplementaire": renforce["stock_initial_ajoute"]},
     ]
+
+    politique_stock = []
+    for classe in sorted(POLITIQUE):
+        politique_stock.append({
+            "Classe_ABC_XYZ": classe,
+            "Jours_Stock_Securite_Initiale": POLITIQUE_INITIALE[classe],
+            "Jours_Stock_Securite_Retenus": POLITIQUE[classe],
+            "Jours_Stock_Securite_Renforces": POLITIQUE_RENFORCEE[classe],
+        })
 
     exporter("segmentation_abc_xyz.csv", segmentation)
     exporter("synthese_classes_abc_xyz.csv", synthese_classes)
     exporter("performance_par_classe_abc.csv", performance_abc)
     exporter("comparaison_reappro_uniforme_vs_abc_xyz.csv", comparaison)
     exporter("synthese_mensuelle_abc_xyz.csv", differencie["lignes_mensuelles"])
+    exporter("politique_stock_securite_abc_xyz.csv", politique_stock)
+    exporter("sensibilite_politique_abc_xyz.csv", comparaison)
 
     print("SEGMENTATION ABC/XYZ ET SIMULATION")
     print(f"SKU classés : {len(profils)}")
     print(f"Seuil CV X : {seuil_x:.3f} ; seuil CV Y : {seuil_y:.3f}")
-    print(f"Taux de service avec politique ABC/XYZ : {differencie['taux_service']:.1%}")
+    print(f"Taux de service, réapprovisionnement uniforme : {uniforme['taux_service']:.1%}")
+    print(f"Taux de service, politique ABC/XYZ : {differencie['taux_service']:.1%}")
     print(f"Taux de rupture SKU-mois : {differencie['taux_rupture']:.1%}")
     print("Fichiers créés dans outputs/.")
+
 
 
 if __name__ == "__main__":
