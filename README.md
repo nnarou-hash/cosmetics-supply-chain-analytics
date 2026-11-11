@@ -62,10 +62,13 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 ├── outputs/
 │   ├── synthese_mensuelle.csv
 │   ├── synthese_categories.csv
-│   └── liste_sku_a_risque.csv
+│   ├── liste_sku_a_risque.csv
+│   ├── comparaison_scenarios_reappro.csv
+│   └── synthese_mensuelle_reappro.csv
 └── src/
     ├── validate_data.py
-    └── analyse_exploratoire.py
+    ├── analyse_exploratoire.py
+    └── simuler_reapprovisionnement.py
 ```
 
 ## Reproduire les analyses
