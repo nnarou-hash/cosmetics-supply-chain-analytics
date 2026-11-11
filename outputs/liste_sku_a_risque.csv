@@ -2,7 +2,7 @@ SKU,Marque_Fictive,Categorie,Sous_Categorie,Chiffre_Affaires_EUR,Taux_Rupture,Ta
 SKU030,Marque 01,Soin de la peau,Nettoyant,149438.25,0.6944,0.8686,0.1367,0.1002
 SKU064,Marque 05,Maquillage,Fond de teint,58761.18,0.6389,0.8466,0.0708,0.1703
 SKU000,Marque 01,Soin de la peau,Sérum,339481,0.6389,0.8831,0.0817,0.0989
-SKU011,Marque 02,Soin capillaire,Soin capillaire,288921.6,0.6389,0.8579,0.1022,0.1132
+SKU011,Marque 02,Soin capillaire,Traitement,288921.6,0.6389,0.8579,0.1022,0.1132
 SKU091,Marque 02,Maquillage,Fard à joues,753498.06,0.6389,0.8572,0.1258,0.1595
 SKU001,Marque 02,Maquillage,Rouge à lèvres,453962.52,0.6111,0.8723,0.1331,0.1681
 SKU097,Marque 08,Maquillage,Rouge à lèvres,529414.17,0.5833,0.9258,0.0822,0.1121
