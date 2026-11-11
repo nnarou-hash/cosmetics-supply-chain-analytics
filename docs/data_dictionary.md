@@ -18,7 +18,7 @@ Le fichier contient 3 604 lignes brutes : 3 600 observations SKU-mois attendues 
 | Receipts | Quantité reçue durant le mois |
 | Closing_Stock | Stock de clôture : stock initial + réceptions − ventes, sauf sur 25 exceptions injectées |
 | Stock_Target | Stock cible simulé |
-| Lead_Time_Days | Délai fournisseur simulé en jours |
+| Lead_Time_Days | Délai fournisseur simulé en jours ; utilisé pour dater les réceptions du scénario de réapprovisionnement |
 | Order_Quantity | Quantité de réapprovisionnement simulée |
 | Stockout_Flag | 1 si la demande dépasse le stock disponible |
 | Stock_Cover_Months | Stock de clôture / prévision mensuelle |
@@ -38,3 +38,14 @@ Le stock initial du mois suivant reprend le stock de clôture enregistré le moi
 
 ## Interprétation des prévisions
 La précision de prévision est calculée par rapport à la demande simulée (Demand_Units), pas seulement par rapport aux ventes servies (Units_Sold). En situation de rupture, les ventes ne représentent pas toute la demande.
+
+## Sorties du modèle de réapprovisionnement
+
+Le script src/simuler_reapprovisionnement.py crée deux fichiers distincts de l'historique de référence :
+
+| Fichier | Contenu |
+|---|---|
+| outputs/comparaison_scenarios_reappro.csv | Comparaison de l'historique et de cinq niveaux de stock de sécurité (0, 5, 7, 10 et 15 jours) |
+| outputs/synthese_mensuelle_reappro.csv | Demande, ventes servies simulées, demande non satisfaite, taux de service, ruptures, commandes, réceptions, stock et couverture du scénario retenu (10 jours) |
+
+Le scénario recalculé n'écrase pas les champs Receipts, Units_Sold et Closing_Stock de l'historique de référence.
