@@ -1,0 +1,29 @@
+Hypothese_Couts,Scenario,Taux_Cout_Stock_Annuel,Cout_Ligne_Commande_EUR,Taux_Marge_Perdue,Cout_Portage_EUR,Cout_Commandes_EUR,Cout_Marge_Perdue_EUR,Cout_Total_Pertinent_EUR
+Centrale,Historique estimé (approx. mensuelle),0.2,12,0.6,41794.307139,43200,1267442.514,1352436.821139
+Centrale,Stock uniforme · 10 jours,0.2,12,0.6,135521.717368,43152,229793.4,408467.117368
+Centrale,Politique ABC/XYZ,0.2,12,0.6,148087.603044,43152,173760.798,365000.401044
+Centrale,Politique ABC/XYZ renforcée,0.2,12,0.6,156557.482968,43152,146068.26,345777.742968
+Portage faible,Historique estimé (approx. mensuelle),0.1,12,0.6,20897.153569,43200,1267442.514,1331539.667569
+Portage faible,Stock uniforme · 10 jours,0.1,12,0.6,67760.858684,43152,229793.4,340706.258684
+Portage faible,Politique ABC/XYZ,0.1,12,0.6,74043.801522,43152,173760.798,290956.599522
+Portage faible,Politique ABC/XYZ renforcée,0.1,12,0.6,78278.741484,43152,146068.26,267499.001484
+Portage élevé,Historique estimé (approx. mensuelle),0.3,12,0.6,62691.460708,43200,1267442.514,1373333.974708
+Portage élevé,Stock uniforme · 10 jours,0.3,12,0.6,203282.576052,43152,229793.4,476227.976052
+Portage élevé,Politique ABC/XYZ,0.3,12,0.6,222131.404567,43152,173760.798,439044.202567
+Portage élevé,Politique ABC/XYZ renforcée,0.3,12,0.6,234836.224452,43152,146068.26,424056.484452
+Commande faible,Historique estimé (approx. mensuelle),0.2,6,0.6,41794.307139,21600,1267442.514,1330836.821139
+Commande faible,Stock uniforme · 10 jours,0.2,6,0.6,135521.717368,21576,229793.4,386891.117368
+Commande faible,Politique ABC/XYZ,0.2,6,0.6,148087.603044,21576,173760.798,343424.401044
+Commande faible,Politique ABC/XYZ renforcée,0.2,6,0.6,156557.482968,21576,146068.26,324201.742968
+Commande élevée,Historique estimé (approx. mensuelle),0.2,24,0.6,41794.307139,86400,1267442.514,1395636.821139
+Commande élevée,Stock uniforme · 10 jours,0.2,24,0.6,135521.717368,86304,229793.4,451619.117368
+Commande élevée,Politique ABC/XYZ,0.2,24,0.6,148087.603044,86304,173760.798,408152.401044
+Commande élevée,Politique ABC/XYZ renforcée,0.2,24,0.6,156557.482968,86304,146068.26,388929.742968
+Marge perdue faible,Historique estimé (approx. mensuelle),0.2,12,0.4,41794.307139,43200,844961.676,929955.983139
+Marge perdue faible,Stock uniforme · 10 jours,0.2,12,0.4,135521.717368,43152,153195.6,331869.317368
+Marge perdue faible,Politique ABC/XYZ,0.2,12,0.4,148087.603044,43152,115840.532,307080.135044
+Marge perdue faible,Politique ABC/XYZ renforcée,0.2,12,0.4,156557.482968,43152,97378.84,297088.322968
+Marge perdue élevée,Historique estimé (approx. mensuelle),0.2,12,0.7,41794.307139,43200,1478682.933,1563677.240139
+Marge perdue élevée,Stock uniforme · 10 jours,0.2,12,0.7,135521.717368,43152,268092.3,446766.017368
+Marge perdue élevée,Politique ABC/XYZ,0.2,12,0.7,148087.603044,43152,202720.931,393960.534044
+Marge perdue élevée,Politique ABC/XYZ renforcée,0.2,12,0.7,156557.482968,43152,170412.97,370122.452968
