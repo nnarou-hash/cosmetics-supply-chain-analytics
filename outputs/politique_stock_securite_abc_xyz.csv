@@ -1,0 +1,10 @@
+Segment_ABC_XYZ,Jours_Stock_Securite_Initiale,Jours_Stock_Securite_Retenus,Jours_Stock_Securite_Renforces
+AX,10,10,12
+AY,12,12,14
+AZ,15,15,17
+BX,7,8,8
+BY,9,10,10
+BZ,12,13,13
+CX,3,7,7
+CY,5,9,9
+CZ,8,12,12
