@@ -62,3 +62,15 @@ Le scénario recalculé n'écrase pas les champs Receipts, Units_Sold et Closing
 | outputs/politique_stock_securite_abc_xyz.csv | Jours de stock de sécurité par segment |
 
 **CV de demande mensuelle** : écart-type de population de la demande mensuelle / moyenne de la demande mensuelle sur 36 mois. Les classes X, Y et Z sont des terciles empiriques du portefeuille simulé.
+
+
+## Modèle économique de réapprovisionnement
+
+| Fichier | Contenu |
+|---|---|
+| outputs/comparaison_couts_reappro.csv | Coûts de portage, de commande, marge perdue, coût pertinent, achats et investissement de démarrage par scénario |
+| outputs/sensibilite_couts_reappro.csv | Sensibilité du coût pertinent aux hypothèses de portage, de commande et de marge perdue |
+| outputs/synthese_mensuelle_couts.csv | Coûts mensuels des trois politiques simulées, avec achats estimés et service |
+| outputs/hypotheses_couts.csv | Hypothèses centrales et intervalles testés |
+
+**Coût pertinent** : somme du coût de portage du stock, du coût de passation des lignes de commande et de la marge estimée perdue sur la demande non satisfaite. Les achats commandés sont exclus de cette somme et présentés à part.
