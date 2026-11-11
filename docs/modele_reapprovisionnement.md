@@ -69,3 +69,32 @@ python src/simuler_reapprovisionnement.py
 ```
 
 Dépendance : bibliothèque standard Python uniquement.
+
+## Extension : segmentation ABC/XYZ
+
+La simulation complémentaire classe les SKU sur deux axes :
+
+- ABC selon la valeur de demande sur 36 mois (demande × prix unitaire simulé), avec seuils cumulatifs de 80 % et 95 %.
+- XYZ selon le coefficient de variation de la demande mensuelle sur 36 mois. Les 100 SKU sont répartis en terciles empiriques (33 X, 33 Y, 34 Z ; CV X ≤ 0,2593 et CV Y ≤ 0,3485).
+
+### Politique retenue
+
+| Segment | X | Y | Z |
+|---|---:|---:|---:|
+| A | 10 jours | 12 jours | 15 jours |
+| B | 8 jours | 10 jours | 13 jours |
+| C | 7 jours | 9 jours | 12 jours |
+
+### Comparaison des scénarios
+
+| Scénario | Taux de service | SKU-mois avec rupture | Demande non satisfaite | Couverture moyenne fin de mois |
+|---|---:|---:|---:|---:|
+| Historique de référence | 91,46 % | 37,31 % | 42 656 | 8,6 j |
+| Réapprovisionnement uniforme · 10 jours | 98,37 % | 10,08 % | 8 155 | 24,9 j |
+| Première matrice ABC/XYZ | 98,34 % | 12,28 % | 8 271 | 24,9 j |
+| Politique ABC/XYZ retenue | 98,64 % | 9,56 % | 6 768 | 26,0 j |
+| Politique renforcée | 98,79 % | 8,67 % | 6 034 | 26,9 j |
+
+Face au stock fixe de 10 jours, la politique différenciée atteint 98,64 % de taux de service contre 98,37 %, réduit la demande non satisfaite de 8 155 à 6 768 unités et augmente la couverture fin de mois de 24,88 à 25,96 jours. Pour la classe A, le service passe de 98,55 % à 99,07 %. Les classes B et C peuvent être un peu moins bien servies que sous le scénario uniforme.
+
+Le stock initial est augmenté de 677 unités dans le scénario retenu pour éviter un effet de démarrage. Les coûts de stockage et de rupture ne sont pas intégrés : ce résultat ne démontre pas un optimum économique.
