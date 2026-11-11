@@ -123,4 +123,7 @@ Le scénario à 10 jours est retenu comme compromis illustratif, pas comme optim
 
 ## Reproductibilité
 
-Depuis la racine du dépôt : `python src/analyse_exploratoire.py`. Le script génère trois tableaux CSV dans `outputs/`.
+Depuis la racine du dépôt :
+
+- `python src/analyse_exploratoire.py` génère les synthèses historiques et la liste des SKU à risque.
+- `python src/simuler_reapprovisionnement.py` génère la comparaison des scénarios de stock de sécurité et la synthèse mensuelle du scénario retenu.
