@@ -99,7 +99,7 @@ def simuler_couts(profils, politique, hypotheses, nom_scenario):
                         delai + JOURS_REVUE + securite
                     )
                     position_stock = stock + quantite_en_transit
-                    quantite = max(0, int(__import__("math").ceil(niveau_cible - position_stock)))
+                    quantite = max(0, int(math.ceil(niveau_cible - position_stock)))
                     if quantite:
                         transit[date_courante + timedelta(days=delai)] += quantite
                         commandes += 1
