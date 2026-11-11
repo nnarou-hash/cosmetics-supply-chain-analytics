@@ -80,10 +80,46 @@ Ces exceptions ont été injectées volontairement pour démontrer les contrôle
 
 - Les ventes, stocks, demandes et prévisions sont simulés et ne représentent aucune entreprise réelle.
 - Les marques et fournisseurs sont des libellés fictifs.
-- Les réceptions sont simplifiées : les délais fournisseurs sont présents dans le fichier mais ne déterminent pas encore les dates d'arrivée des commandes.
+- Dans l'historique de référence, les réceptions sont simplifiées : les délais fournisseurs n'y déterminent pas les dates d'arrivée. Une simulation distincte utilise ces délais pour planifier les réceptions recalculées.
 - Le seuil de surstock (125 % du stock cible) ne détecte qu'un seul SKU-mois dans cette version. Ce KPI et les paramètres associés doivent être réexaminés avant toute conclusion.
 - Le WAPE agrégé pondère les erreurs par le volume de demande ; il diffère de la moyenne des précisions calculées individuellement par SKU-mois.
 - La moyenne simple du champ `Forecast_Accuracy` est de 86,8 %. Elle n'est pas égale à la précision pondérée (87,3 %), car chaque SKU-mois a le même poids dans la moyenne simple, tandis que la précision pondérée tient compte des volumes de demande.
+
+## 9. Scénario de réapprovisionnement
+
+Une simulation séparée teste une politique de revue mensuelle. Au premier jour de chaque mois, le niveau cible est calculé à partir de la prévision journalière du SKU, de son délai fournisseur, de 30 jours de période de revue et du stock de sécurité choisi. La quantité commandée tient compte du stock disponible et des commandes déjà en transit. Chaque réception est enregistrée à la date de commande + délai fournisseur. La demande mensuelle est répartie sur les jours du mois.
+
+### Comparaison de référence
+
+| Indicateur | Historique de référence | Scénario retenu (10 jours) |
+|---|---:|---:|
+| Taux de service | 91,5 % | 98,4 % |
+| SKU-mois avec rupture | 37,3 % | 10,1 % |
+| Demande non satisfaite | 42 656 unités | 8 155 unités |
+| Couverture moyenne fin de mois | 8,6 jours | 24,9 jours |
+| Commandes générées | — | 3 596 |
+
+Le scénario réduit les ruptures et la demande non satisfaite, mais augmente la couverture moyenne de fin de mois. Ce résultat illustre un arbitrage de stock et de disponibilité ; il ne démontre pas une réduction du coût total, car les coûts de stockage, de commande, de transport et de rupture ne sont pas valorisés.
+
+### Sensibilité au stock de sécurité
+
+| Stock de sécurité | Taux de service | SKU-mois avec rupture | Demande non satisfaite | Couverture fin de mois |
+|---:|---:|---:|---:|---:|
+| 0 jour | 92,5 % | 43,5 % | 37 597 | 16,7 jours |
+| 5 jours | 96,4 % | 22,5 % | 18 097 | 20,5 jours |
+| 7 jours | 97,4 % | 17,4 % | 13 175 | 22,2 jours |
+| 10 jours | 98,4 % | 10,1 % | 8 155 | 24,9 jours |
+| 15 jours | 99,2 % | 4,8 % | 4 054 | 29,6 jours |
+
+Le scénario à 10 jours est retenu comme compromis illustratif, pas comme optimum universel. Les hypothèses et les limites de la méthode figurent dans le document consacré au modèle.
+
+### Limites spécifiques
+
+- Le modèle suppose une revue le premier jour de chaque mois et une demande répartie uniformément au cours du mois.
+- Les commandes sont supposées livrées intégralement après le délai fournisseur simulé ; retards aléatoires, capacités, lots minimums et calendriers de livraison ne sont pas modélisés.
+- Le stock initial est ajusté pour éviter un artefact de démarrage : 536 unités sont ajoutées au stock d'ouverture agrégé dans le scénario à 10 jours.
+- Le scénario reprend les demandes et prévisions simulées connues du jeu ; il ne constitue pas un test prédictif en conditions réelles.
+- Les coûts de possession, passation, transport, obsolescence et rupture ne sont pas valorisés.
 
 ## Reproductibilité
 
