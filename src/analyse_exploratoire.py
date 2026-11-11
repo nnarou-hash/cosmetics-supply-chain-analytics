@@ -83,7 +83,7 @@ def main():
           "Taux_Service":round(m["taux_service"],4),"WAPE":round(m["wape"],4),
           "Couverture_Moyenne_Mois":round(m["couverture"],4)})
     risques.sort(key=lambda x:(-x["Taux_Rupture"],x["Couverture_Moyenne_Mois"]))
-    exporter("liste_sku_a_risque.csv",risques[:20])
+    exporter("liste_sku_a_risque.csv",risques[:10])
 
     print("Analyse exploratoire terminée.")
     print(f"Lignes brutes : {len(brutes):,}")
