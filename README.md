@@ -11,6 +11,7 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 1. **Vue d'ensemble** : chiffre d'affaires, ventes, précision des prévisions, taux de service et performance annuelle.
 2. **Stocks et prévisions** : couverture, ruptures, demande vs prévisions et SKU à surveiller.
 3. **Qualité des données** : valeurs manquantes, doublons, incohérences et contrôles.
+4. **Simulation de réapprovisionnement** : impact du stock de sécurité et des délais fournisseurs sur le taux de service et les ruptures.
 
 ## Jeu de données
 - 3 604 lignes brutes, dont 4 doublons volontairement ajoutés ;
@@ -26,7 +27,10 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 - taux de rupture : 37,3 % des SKU-mois ;
 - précision des prévisions pondérée : 87,3 % ;
 - WAPE : 12,7 % (erreur absolue pondérée) ;
-- couverture moyenne : 0,28 mois.
+- couverture moyenne historique : 0,28 mois.
+
+### Scénario de réapprovisionnement
+Une simulation distincte applique une revue mensuelle et les délais fournisseurs de chaque SKU. Avec 10 jours de stock de sécurité, le taux de service simulé atteint **98,4 %**, contre 91,5 % dans l'historique de référence ; le taux de rupture passe de **37,3 % à 10,1 %** des SKU-mois. La couverture moyenne de fin de mois augmente à **24,9 jours**. Il s'agit d'un arbitrage disponibilité / immobilisation, pas d'une économie financière démontrée.
 
 Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 
@@ -40,6 +44,7 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 - **Biais de prévision** : (demande − prévision) / demande ; un biais positif signifie une sous-prévision.
 - **Sous-couverture** : couverture inférieure à 0,75 mois.
 - **Surstock** : stock de clôture supérieur à 125 % du stock cible.
+- **Stock de sécurité** : jours de demande prévisionnelle ajoutés au délai fournisseur et à la période de revue pour déterminer le niveau cible.
 
 ## Structure du dépôt
 ```text
@@ -50,6 +55,7 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 ├── dashboard/
 │   └── cosmetics_supply_chain_dashboard.html
 ├── docs/
+│   ├── modele_reapprovisionnement.md
 │   ├── data_dictionary.md
 │   ├── data_quality_audit.md
 │   └── analyse_exploratoire.md
@@ -65,6 +71,7 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 ## Reproduire les analyses
 `python src/validate_data.py`  
 `python src/analyse_exploratoire.py`
+`python src/simuler_reapprovisionnement.py`
 
 ---
 *Projet pédagogique. Tous les résultats sont simulés et illustratifs.*
