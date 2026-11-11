@@ -395,42 +395,42 @@ Date,SKU,Brand,Product_Type,Subcategory,Price_EUR,Demand_Units,Units_Sold,Foreca
 2026-10-01,SKU010,Marque 01,Maquillage,Mascara,92.76,80,80,73,7420.8,40,57,17,122,21,72,0,0.23,Fournisseur 01,Conforme,7,0.9125,0,1,1576.92
 2026-11-01,SKU010,Marque 01,Maquillage,Mascara,92.76,63,63,94,5843.88,17,93,47,157,22,97,0,0.5,Fournisseur 01,Conforme,-31,0.50793651,0,1,4359.72
 2026-12-01,SKU010,Marque 01,Maquillage,Mascara,92.76,79,79,89,7328.04,47,92,64,149,20,93,0,0.72,Fournisseur 01,Incohérence de stock,-10,0.87341772,0,1,5936.64
-2024-01-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,105,105,90,3830.4,91,71,57,185,15,82,0,0.63,Fournisseur 02,Conforme,15,0.85714286,0,1,2079.36
-2024-02-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,127,127,100,4632.96,57,91,21,206,15,101,0,0.21,Fournisseur 02,Conforme,27,0.78740157,0,1,766.08
-2024-03-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,127,123,116,4487.04,21,102,0,239,17,98,1,0,Fournisseur 02,Conforme,11,0.91338583,0,1,0
-2024-04-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,94,94,126,3429.12,0,138,44,259,15,132,0,0.35,Fournisseur 02,Conforme,-32,0.65957447,0,1,1605.12
-2024-05-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,134,134,121,4888.32,44,106,16,249,15,124,0,0.13,Fournisseur 02,Conforme,13,0.90298507,0,1,583.68
-2024-06-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,148,142,119,5180.16,16,126,0,245,16,129,1,0,Fournisseur 02,Conforme,29,0.80405405,0,1,0
-2024-07-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,112,107,119,3903.36,0,107,0,245,17,126,1,0,Fournisseur 02,Conforme,-7,0.9375,0,1,0
-2024-08-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,115,80,116,2918.4,0,80,0,239,18,96,1,0,Fournisseur 02,Conforme,-1,0.99130435,0,1,0
-2024-09-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,116,116,120,4231.68,0,119,3,247,16,143,0,0.03,Fournisseur 02,Conforme,-4,0.96551724,0,1,109.44
-2024-10-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,91,91,125,3319.68,3,126,38,257,17,142,0,0.3,Fournisseur 02,Conforme,-34,0.62637363,0,1,1386.24
-2024-11-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,150,150,174,5472,38,166,54,358,16,162,0,0.31,Fournisseur 02,Conforme,-24,0.84,0,1,1969.92
-2024-12-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,186,175,163,6384,54,121,0,336,17,160,1,0,Fournisseur 02,Conforme,23,0.87634409,0,1,0
-2025-01-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,165,160,179,5836.8,0,160,0,369,14,178,1,0,Fournisseur 02,Conforme,-14,0.91515152,0,1,0
-2025-02-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,175,151,171,5508.48,0,151,0,352,17,155,1,0,Fournisseur 02,Conforme,4,0.97714286,0,1,0
-2025-03-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,199,193,197,7040.64,0,193,0,406,16,193,1,0,Fournisseur 02,Conforme,2,0.98994975,0,1,0
-2025-04-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,238,200,240,7296,0,200,0,494,17,200,1,0,Fournisseur 02,Conforme,-2,0.99159664,0,1,0
-2025-05-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,228,180,216,6566.4,0,180,0,445,15,199,1,0,Fournisseur 02,Conforme,12,0.94736842,0,1,0
-2025-06-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,300,156,241,5690.88,0,156,0,496,17,204,1,0,Fournisseur 02,Conforme,59,0.80333333,0,1,0
-2025-07-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,162,162,227,5909.76,0,227,65,467,17,271,0,0.29,Fournisseur 02,Conforme,-65,0.59876543,0,1,2371.2
-2025-08-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,244,214,222,7806.72,65,149,0,457,16,194,1,0,Fournisseur 02,Conforme,22,0.90983607,0,1,0
-2025-09-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,258,165,213,6019.2,0,165,0,439,15,188,1,0,Fournisseur 02,Conforme,45,0.8255814,0,1,0
-2025-10-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,246,177,211,6456.96,0,177,0,435,15,169,1,0,Fournisseur 02,Conforme,35,0.85772358,0,1,0
-2025-11-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,271,200,256,7296,0,200,0,527,17,209,1,0,Fournisseur 02,Conforme,15,0.94464945,0,1,0
-2025-12-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,292,204,256,7441.92,0,204,0,527,15,247,1,0,Fournisseur 02,Conforme,36,0.87671233,0,1,0
-2026-01-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,259,205,298,7478.4,0,205,0,614,18,259,1,0,Fournisseur 02,Conforme,-39,0.84942085,0,1,0
-2026-02-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,398,354,376,12913.92,0,354,0,774,15,407,1,0,Fournisseur 02,Conforme,22,0.94472362,0,1,0
-2026-03-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,352,286,376,10433.28,0,286,0,774,16,348,1,0,Fournisseur 02,Conforme,-24,0.93181818,0,1,0
-2026-04-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,468,353,394,12877.44,0,353,0,811,16,404,1,0,Fournisseur 02,Conforme,74,0.84188034,0,1,0
-2026-05-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,419,316,404,11527.68,0,316,0,832,17,332,1,0,Fournisseur 02,Conforme,15,0.96420048,0,1,0
-2026-06-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,412,412,409,15029.76,0,416,4,842,15,506,0,0.01,Fournisseur 02,Conforme,3,0.99271845,0,1,145.92
-2026-07-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,490,283,388,10323.84,4,279,0,799,16,331,1,0,Fournisseur 02,Conforme,102,0.79183673,0,1,0
-2026-08-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,378,332,350,12111.36,0,332,0,721,17,390,1,0,Fournisseur 02,Conforme,28,0.92592593,0,1,0
-2026-09-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,399,399,412,14555.52,0,450,51,848,15,494,0,0.12,Fournisseur 02,Conforme,-13,0.96741855,0,1,1860.48
-2026-10-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,347,347,413,12658.56,51,451,155,850,17,512,0,0.38,Fournisseur 02,Conforme,-66,0.80979827,0,1,5654.4
-2026-11-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,463,463,509,16890.24,155,627,319,1048,18,611,0,0.63,Fournisseur 02,Conforme,-46,0.90064795,0,1,11637.12
-2026-12-01,SKU011,Marque 02,Soin capillaire,Soin capillaire,36.48,564,564,482,20574.72,319,385,140,993,16,386,0,0.29,Fournisseur 02,Conforme,82,0.85460993,0,1,5107.2
+2024-01-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,105,105,90,3830.4,91,71,57,185,15,82,0,0.63,Fournisseur 02,Conforme,15,0.85714286,0,1,2079.36
+2024-02-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,127,127,100,4632.96,57,91,21,206,15,101,0,0.21,Fournisseur 02,Conforme,27,0.78740157,0,1,766.08
+2024-03-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,127,123,116,4487.04,21,102,0,239,17,98,1,0,Fournisseur 02,Conforme,11,0.91338583,0,1,0
+2024-04-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,94,94,126,3429.12,0,138,44,259,15,132,0,0.35,Fournisseur 02,Conforme,-32,0.65957447,0,1,1605.12
+2024-05-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,134,134,121,4888.32,44,106,16,249,15,124,0,0.13,Fournisseur 02,Conforme,13,0.90298507,0,1,583.68
+2024-06-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,148,142,119,5180.16,16,126,0,245,16,129,1,0,Fournisseur 02,Conforme,29,0.80405405,0,1,0
+2024-07-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,112,107,119,3903.36,0,107,0,245,17,126,1,0,Fournisseur 02,Conforme,-7,0.9375,0,1,0
+2024-08-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,115,80,116,2918.4,0,80,0,239,18,96,1,0,Fournisseur 02,Conforme,-1,0.99130435,0,1,0
+2024-09-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,116,116,120,4231.68,0,119,3,247,16,143,0,0.03,Fournisseur 02,Conforme,-4,0.96551724,0,1,109.44
+2024-10-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,91,91,125,3319.68,3,126,38,257,17,142,0,0.3,Fournisseur 02,Conforme,-34,0.62637363,0,1,1386.24
+2024-11-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,150,150,174,5472,38,166,54,358,16,162,0,0.31,Fournisseur 02,Conforme,-24,0.84,0,1,1969.92
+2024-12-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,186,175,163,6384,54,121,0,336,17,160,1,0,Fournisseur 02,Conforme,23,0.87634409,0,1,0
+2025-01-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,165,160,179,5836.8,0,160,0,369,14,178,1,0,Fournisseur 02,Conforme,-14,0.91515152,0,1,0
+2025-02-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,175,151,171,5508.48,0,151,0,352,17,155,1,0,Fournisseur 02,Conforme,4,0.97714286,0,1,0
+2025-03-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,199,193,197,7040.64,0,193,0,406,16,193,1,0,Fournisseur 02,Conforme,2,0.98994975,0,1,0
+2025-04-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,238,200,240,7296,0,200,0,494,17,200,1,0,Fournisseur 02,Conforme,-2,0.99159664,0,1,0
+2025-05-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,228,180,216,6566.4,0,180,0,445,15,199,1,0,Fournisseur 02,Conforme,12,0.94736842,0,1,0
+2025-06-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,300,156,241,5690.88,0,156,0,496,17,204,1,0,Fournisseur 02,Conforme,59,0.80333333,0,1,0
+2025-07-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,162,162,227,5909.76,0,227,65,467,17,271,0,0.29,Fournisseur 02,Conforme,-65,0.59876543,0,1,2371.2
+2025-08-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,244,214,222,7806.72,65,149,0,457,16,194,1,0,Fournisseur 02,Conforme,22,0.90983607,0,1,0
+2025-09-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,258,165,213,6019.2,0,165,0,439,15,188,1,0,Fournisseur 02,Conforme,45,0.8255814,0,1,0
+2025-10-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,246,177,211,6456.96,0,177,0,435,15,169,1,0,Fournisseur 02,Conforme,35,0.85772358,0,1,0
+2025-11-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,271,200,256,7296,0,200,0,527,17,209,1,0,Fournisseur 02,Conforme,15,0.94464945,0,1,0
+2025-12-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,292,204,256,7441.92,0,204,0,527,15,247,1,0,Fournisseur 02,Conforme,36,0.87671233,0,1,0
+2026-01-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,259,205,298,7478.4,0,205,0,614,18,259,1,0,Fournisseur 02,Conforme,-39,0.84942085,0,1,0
+2026-02-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,398,354,376,12913.92,0,354,0,774,15,407,1,0,Fournisseur 02,Conforme,22,0.94472362,0,1,0
+2026-03-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,352,286,376,10433.28,0,286,0,774,16,348,1,0,Fournisseur 02,Conforme,-24,0.93181818,0,1,0
+2026-04-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,468,353,394,12877.44,0,353,0,811,16,404,1,0,Fournisseur 02,Conforme,74,0.84188034,0,1,0
+2026-05-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,419,316,404,11527.68,0,316,0,832,17,332,1,0,Fournisseur 02,Conforme,15,0.96420048,0,1,0
+2026-06-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,412,412,409,15029.76,0,416,4,842,15,506,0,0.01,Fournisseur 02,Conforme,3,0.99271845,0,1,145.92
+2026-07-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,490,283,388,10323.84,4,279,0,799,16,331,1,0,Fournisseur 02,Conforme,102,0.79183673,0,1,0
+2026-08-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,378,332,350,12111.36,0,332,0,721,17,390,1,0,Fournisseur 02,Conforme,28,0.92592593,0,1,0
+2026-09-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,399,399,412,14555.52,0,450,51,848,15,494,0,0.12,Fournisseur 02,Conforme,-13,0.96741855,0,1,1860.48
+2026-10-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,347,347,413,12658.56,51,451,155,850,17,512,0,0.38,Fournisseur 02,Conforme,-66,0.80979827,0,1,5654.4
+2026-11-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,463,463,509,16890.24,155,627,319,1048,18,611,0,0.63,Fournisseur 02,Conforme,-46,0.90064795,0,1,11637.12
+2026-12-01,SKU011,Marque 02,Soin capillaire,Traitement,36.48,564,564,482,20574.72,319,385,140,993,16,386,0,0.29,Fournisseur 02,Conforme,82,0.85460993,0,1,5107.2
 2024-01-01,SKU012,Marque 03,Soin de la peau,Sérum,58.67,118,118,87,6923.06,91,108,81,228,18,107,0,0.93,Fournisseur 03,Conforme,31,0.73728814,0,0,4752.27
 2024-02-01,SKU012,Marque 03,Soin de la peau,Sérum,58.67,115,115,106,6747.05,81,72,38,277,17,92,0,0.36,Fournisseur 03,Conforme,9,0.92173913,0,1,2229.46
 2024-03-01,SKU012,Marque 03,Soin de la peau,Sérum,58.67,120,120,118,7040.4,38,128,46,309,16,138,0,0.39,Fournisseur 03,Conforme,2,0.98333333,0,1,2698.82
