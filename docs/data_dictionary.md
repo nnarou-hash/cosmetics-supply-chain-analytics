@@ -1,48 +1,40 @@
-# Data dictionary
+# Dictionnaire de données
 
-The dataset contains **3,604 raw rows**: 3,600 expected monthly SKU observations (100 illustrative SKUs × 36 months) plus 4 deliberately injected duplicate records. The time series runs from January 2024 to December 2026. All operational values are simulated.
+Le fichier contient 3 604 lignes brutes : 3 600 observations SKU-mois attendues (100 SKU fictifs × 36 mois), auxquelles s'ajoutent 4 lignes volontairement dupliquées. La période couvre janvier 2024 à décembre 2026. Toutes les mesures opérationnelles sont simulées.
 
-| Field | Definition |
+| Champ technique | Définition |
 |---|---|
-| Date | First day of the reporting month |
-| SKU | Synthetic product identifier |
-| Brand | Illustrative cosmetics brand label; not brand-reported data |
-| Product_Type | Skincare, Makeup or Haircare |
-| Subcategory | Product subcategory |
-| Price_EUR | Illustrative simulated unit price in euros |
-| Demand_Units | Simulated unconstrained demand before stock availability |
-| Units_Sold | Fulfilled units; cannot exceed Opening_Stock + Receipts |
-| Forecast_Units | Monthly demand forecast |
-| Revenue_EUR | Units_Sold × Price_EUR |
-| Opening_Stock | Available stock at the start of the month |
-| Receipts | Stock received during the month |
-| Closing_Stock | Opening_Stock + Receipts − Units_Sold, except for 25 injected inconsistent rows |
-| Stock_Target | Target stock calculated from forecast and target coverage |
-| Lead_Time_Days | Illustrative supplier lead time |
-| Order_Quantity | Illustrative replenishment order quantity |
-| Stockout_Flag | 1 when simulated demand exceeds available stock |
-| Stock_Cover_Months | Closing_Stock divided by monthly Forecast_Units (denominator floored at 1) |
-| Supplier | Illustrative supplier label; blank on 17 injected missing-value rows |
-| Data_Quality_Status | OK, Missing, Duplicate or Inconsistent |
-| Forecast_Variance | Demand_Units − Forecast_Units |
-| Forecast_Accuracy | 1 − absolute forecast error / demand, floored at 0; blank if demand is zero |
-| Overstock_Flag | 1 when Closing_Stock exceeds 125% of Stock_Target |
-| Low_Cover_Flag | 1 when Stock_Cover_Months is below 0.75 month |
-| Stock_Value_EUR | Closing_Stock × Price_EUR |
+| Date | Premier jour du mois |
+| SKU | Identifiant fictif du produit |
+| Brand | Libellé de marque fictive anonymisée |
+| Product_Type | Catégorie : Maquillage, Soin de la peau ou Soin capillaire |
+| Subcategory | Sous-catégorie du produit, en français |
+| Price_EUR | Prix unitaire simulé en euros |
+| Demand_Units | Demande simulée non contrainte par le stock disponible |
+| Units_Sold | Quantité servie ; plafonnée par le stock disponible |
+| Forecast_Units | Prévision mensuelle de demande |
+| Revenue_EUR | Chiffre d'affaires simulé : Units_Sold × Price_EUR |
+| Opening_Stock | Stock disponible au début du mois |
+| Receipts | Quantité reçue durant le mois |
+| Closing_Stock | Stock de clôture : stock initial + réceptions − ventes, sauf sur 25 exceptions injectées |
+| Stock_Target | Stock cible simulé |
+| Lead_Time_Days | Délai fournisseur simulé en jours |
+| Order_Quantity | Quantité de réapprovisionnement simulée |
+| Stockout_Flag | 1 si la demande dépasse le stock disponible |
+| Stock_Cover_Months | Stock de clôture / prévision mensuelle |
+| Supplier | Libellé de fournisseur fictif ; vide sur 17 lignes de test |
+| Data_Quality_Status | Conforme, Valeur manquante, Doublon ou Incohérence de stock |
+| Forecast_Variance | Demande simulée − prévision |
+| Forecast_Accuracy | 1 − erreur absolue / demande, avec minimum à 0 ; vide si demande nulle |
+| Overstock_Flag | 1 si le stock final dépasse 125 % du stock cible |
+| Low_Cover_Flag | 1 si la couverture est inférieure à 0,75 mois |
+| Stock_Value_EUR | Stock final × prix unitaire |
 
-## Grain and duplicate records
-The expected grain is one record per SKU and month. The base panel has 3,600 unique SKU-month combinations. Four duplicate copies are appended as additional rows to create explicit duplicate-key exceptions; the original records remain present.
+## Grain et exceptions
+Le grain attendu est une ligne par SKU et par mois. Le panel de base comporte 3 600 clés SKU-mois uniques. Quatre copies supplémentaires ont été ajoutées pour tester la détection des doublons. Dix-sept valeurs fournisseur sont volontairement manquantes et 25 bilans de stock sont volontairement incohérents.
 
-## Data-quality exceptions
-The file deliberately includes:
-- 17 rows with a missing Supplier value (status: Missing)
-- 4 extra copies of existing SKU + Date keys (status: Duplicate)
-- 25 rows where Closing_Stock differs from Opening_Stock + Receipts − Units_Sold (status: Inconsistent)
+## Continuité du stock
+Le stock initial du mois suivant reprend le stock de clôture enregistré le mois précédent, y compris lorsqu'une ligne contient une incohérence injectée. Cela isole l'anomalie au mois concerné.
 
-These are synthetic test cases, not accidental source-data defects.
-
-## Inventory continuity
-For each SKU, the next month's Opening_Stock carries forward the previous month's recorded Closing_Stock. This is preserved even after an injected inconsistent closing value, so the stock-balance exception is localized to the affected row rather than propagating into later months.
-
-## Metric interpretation
-Forecast accuracy is calculated against Demand_Units rather than Units_Sold. This distinction matters because a stock-out constrains fulfilled sales; using sales alone as a demand proxy would understate demand during stock-out periods.
+## Interprétation des prévisions
+La précision de prévision est calculée par rapport à la demande simulée (Demand_Units), pas seulement par rapport aux ventes servies (Units_Sold). En situation de rupture, les ventes ne représentent pas toute la demande.
