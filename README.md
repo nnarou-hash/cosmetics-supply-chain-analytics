@@ -2,6 +2,15 @@
 
 **Projet portfolio | Business & Data Analyst | Stocks | Prévisions | Qualité des données**
 
+
+## Dashboard en ligne
+
+Le dashboard interactif est destiné à être publié sur GitHub Pages :
+
+**[Ouvrir le dashboard en ligne](https://nnarou-hash.github.io/cosmetics-supply-chain-analytics/)**
+
+Le déploiement est automatisé par le workflow `.github/workflows/deploy-pages.yml` à chaque modification du fichier HTML du dashboard sur `main`. Au premier déploiement, vérifier dans **Settings → Pages** que la source est définie sur **GitHub Actions**.
+
 ## Objectif métier
 Analyser la performance des stocks et de la demande dans un portefeuille de produits cosmétiques, depuis la fiabilisation des données jusqu'à l'identification des risques de rupture et de surstock.
 
