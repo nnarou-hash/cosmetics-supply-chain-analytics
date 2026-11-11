@@ -1,4 +1,4 @@
-Classe_ABC,Nombre_SKU,Part_Valeur_Demande_EUR,Taux_Service_Fixe_10j,Taux_Service_ABC_XYZ,Taux_Rupture_Fixe_10j,Taux_Rupture_ABC_XYZ,Demande_Non_Satisfaite_Fixe_10j,Demande_Non_Satisfaite_ABC_XYZ
+Classe_ABC,Nombre_SKU,Part_Valeur_Demande,Taux_Service_Fixe_10j,Taux_Service_ABC_XYZ,Taux_Rupture_Fixe_10j,Taux_Rupture_ABC_XYZ,Demande_Non_Satisfaite_Fixe_10j,Demande_Non_Satisfaite_ABC_XYZ
 A,50,0.7974,0.98553,0.990739,0.095556,0.065,4867,3115
-B,26,0.151073,0.981633,0.976579,0.101496,0.138889,1799,2294
-C,24,0.051527,0.97709,0.955964,0.111111,0.225694,1489,2862
+B,26,0.151073,0.981633,0.980091,0.101496,0.117521,1799,1950
+C,24,0.051527,0.97709,0.973797,0.111111,0.135417,1489,1703
