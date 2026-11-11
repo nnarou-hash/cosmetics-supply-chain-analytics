@@ -5,11 +5,11 @@
 
 ## Dashboard en ligne
 
-Le dashboard interactif est destiné à être publié sur GitHub Pages :
+Le dashboard interactif est hébergé sur le portfolio :
 
-**[Ouvrir le dashboard en ligne](https://nnarou-hash.github.io/cosmetics-supply-chain-analytics/)**
+**[Ouvrir le dashboard live](https://nnarou-hash.github.io/cosmetics-supply-chain-analytics/)**
 
-Le déploiement est automatisé par le workflow `.github/workflows/deploy-pages.yml` à chaque modification du fichier HTML du dashboard sur `main`. Au premier déploiement, vérifier dans **Settings → Pages** que la source est définie sur **GitHub Actions**.
+Le code source du dashboard est disponible dans `dashboard/cosmetics_supply_chain_dashboard.html`.
 
 ## Objectif métier
 Analyser la performance des stocks et de la demande dans un portefeuille de produits cosmétiques, depuis la fiabilisation des données jusqu'à l'identification des risques de rupture et de surstock.
