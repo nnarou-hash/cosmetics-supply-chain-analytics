@@ -1,0 +1,4 @@
+Scenario,Taux_Service,Taux_Rupture_SKU_Mois,Demande_Non_Satisfaite,Couverture_Moyenne_Jours,Nombre_Commandes,Unites_Commandees,Stock_Initial_Supplementaire
+Historique de référence,0.914566,0.373056,42656,8.594289,,,
+Réapprovisionnement uniforme · 10 jours,0.983667,0.100833,8155,24.875671,3596,496517,536
+Politique différenciée ABC/XYZ,0.983434,0.122778,8271,24.888667,3596,497598,634
