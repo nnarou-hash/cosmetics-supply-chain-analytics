@@ -50,7 +50,7 @@ Cette saisonnalité résulte en partie des paramètres utilisés pour générer 
 |---|---|---|---|---:|---:|
 | SKU030 | Marque 01 | Soin de la peau | Nettoyant | 69,4 % | 0,14 mois |
 | SKU000 | Marque 01 | Soin de la peau | Sérum | 63,9 % | 0,08 mois |
-| SKU011 | Marque 02 | Soin capillaire | Soin capillaire | 63,9 % | 0,10 mois |
+| SKU011 | Marque 02 | Soin capillaire | Traitement | 63,9 % | 0,10 mois |
 | SKU064 | Marque 05 | Maquillage | Fond de teint | 63,9 % | 0,07 mois |
 | SKU091 | Marque 02 | Maquillage | Fard à joues | 63,9 % | 0,13 mois |
 
