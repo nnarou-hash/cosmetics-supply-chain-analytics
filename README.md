@@ -70,7 +70,7 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 
 ## Reproduire les analyses
 `python src/validate_data.py`  
-`python src/analyse_exploratoire.py`
+`python src/analyse_exploratoire.py`  
 `python src/simuler_reapprovisionnement.py`
 
 ---
