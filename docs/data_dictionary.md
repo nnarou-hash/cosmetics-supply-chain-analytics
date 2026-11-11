@@ -49,3 +49,16 @@ Le script src/simuler_reapprovisionnement.py crée deux fichiers distincts de l'
 | outputs/synthese_mensuelle_reappro.csv | Demande, ventes servies simulées, demande non satisfaite, taux de service, ruptures, commandes, réceptions, stock et couverture du scénario retenu (10 jours) |
 
 Le scénario recalculé n'écrase pas les champs Receipts, Units_Sold et Closing_Stock de l'historique de référence.
+ 
+## Fichiers de segmentation ABC/XYZ
+
+| Fichier | Définition |
+|---|---|
+| outputs/segmentation_abc_xyz.csv | Classe ABC, classe XYZ, segment, valeur de demande, part cumulée, CV, délai moyen et stock de sécurité par SKU |
+| outputs/synthese_classes_abc_xyz.csv | Effectifs, part de valeur, seuils CV, politique de sécurité et performance par segment ABC/XYZ |
+| outputs/performance_par_classe_abc.csv | Comparaison des indicateurs par classe ABC entre stock fixe de 10 jours et politique différenciée |
+| outputs/comparaison_reappro_uniforme_vs_abc_xyz.csv | Comparaison de l'historique, des politiques uniformes et différenciées |
+| outputs/synthese_mensuelle_abc_xyz.csv | Résultats mensuels du scénario ABC/XYZ |
+| outputs/politique_stock_securite_abc_xyz.csv | Jours de stock de sécurité par segment |
+
+**CV de demande mensuelle** : écart-type de population de la demande mensuelle / moyenne de la demande mensuelle sur 36 mois. Les classes X, Y et Z sont des terciles empiriques du portefeuille simulé.
