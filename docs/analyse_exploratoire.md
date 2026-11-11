@@ -17,7 +17,7 @@
 | Couverture moyenne | 0,28 mois (environ 8,5 jours) |
 | SKU-mois avec couverture inférieure à 0,75 mois | 3 121 (86,7 %) |
 
-**Premier constat :** dans le scénario simulé, la prévision agrégée reste relativement proche de la demande (WAPE de 12,7 %), alors que la disponibilité des produits constitue le principal point de tension : 37,3 % des SKU-mois connaissent une rupture et 86,7 % sont sous le seuil de couverture retenu.
+**Premier constat :** dans le scénario simulé, la précision des prévisions pondérée atteint 87,3 % (WAPE de 12,7 %). La disponibilité des produits constitue toutefois le principal point de tension : 37,3 % des SKU-mois connaissent une rupture et 86,7 % sont sous le seuil de couverture retenu.
 
 ## 2. Évolution annuelle
 
@@ -83,6 +83,7 @@ Ces exceptions ont été injectées volontairement pour démontrer les contrôle
 - Les réceptions sont simplifiées : les délais fournisseurs sont présents dans le fichier mais ne déterminent pas encore les dates d'arrivée des commandes.
 - Le seuil de surstock (125 % du stock cible) ne détecte qu'un seul SKU-mois dans cette version. Ce KPI et les paramètres associés doivent être réexaminés avant toute conclusion.
 - Le WAPE agrégé pondère les erreurs par le volume de demande ; il diffère de la moyenne des précisions calculées individuellement par SKU-mois.
+- La moyenne simple du champ `Forecast_Accuracy` est de 86,8 %. Elle n'est pas égale à la précision pondérée (87,3 %), car chaque SKU-mois a le même poids dans la moyenne simple, tandis que la précision pondérée tient compte des volumes de demande.
 
 ## Reproductibilité
 
