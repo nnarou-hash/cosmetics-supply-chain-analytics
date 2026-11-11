@@ -82,4 +82,4 @@ Depuis la racine du dépôt : `python src/simuler_politique_abc_xyz.py`.
 3. Les paramètres de sécurité sont fixés par hypothèse ; ils ne proviennent pas d'une optimisation.
 4. La demande mensuelle est répartie uniformément au cours du mois et les délais sont déterministes.
 5. Le stock d'ouverture est ajusté de 677 unités dans le scénario retenu afin d'éviter un effet de démarrage.
-6. Les coûts de possession, de commande, de transport, d'obsolescence et de rupture ne sont pas valorisés.
+6. Une valorisation indicative des coûts de possession, de passation et de marge perdue est maintenant disponible dans `docs/analyse_couts_reappro.md`. Elle repose sur des hypothèses fictives et ne constitue pas un optimum économique ni un résultat comptable.
