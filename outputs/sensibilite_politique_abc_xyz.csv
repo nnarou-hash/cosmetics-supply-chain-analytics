@@ -1,0 +1,6 @@
+Scenario,Taux_Service,Taux_Rupture_SKU_Mois,Demande_Non_Satisfaite,Couverture_Moyenne_Fin_Mois_Jours,Nombre_Commandes,Unites_Commandees,Stock_Initial_Supplementaire
+Historique de référence,0.914566,0.373056,42656,8.594289,,,
+Réapprovisionnement uniforme · 10 jours,0.983667,0.100833,8155,24.875671,3596,496517,536
+Première matrice ABC/XYZ,0.983434,0.122778,8271,24.888667,3596,497598,634
+Politique ABC/XYZ retenue,0.986445,0.095556,6768,25.956946,3596,499406,677
+Politique renforcée,0.987915,0.086667,6034,26.915084,3596,500927,821
