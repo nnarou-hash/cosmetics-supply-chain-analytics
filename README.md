@@ -69,7 +69,14 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 │   ├── synthese_categories.csv
 │   ├── liste_sku_a_risque.csv
 │   ├── comparaison_scenarios_reappro.csv
-│   └── synthese_mensuelle_reappro.csv
+│   ├── synthese_mensuelle_reappro.csv
+│   ├── segmentation_abc_xyz.csv
+│   ├── synthese_classes_abc_xyz.csv
+│   ├── performance_par_classe_abc.csv
+│   ├── comparaison_reappro_uniforme_vs_abc_xyz.csv
+│   ├── synthese_mensuelle_abc_xyz.csv
+│   ├── politique_stock_securite_abc_xyz.csv
+│   └── sensibilite_politique_abc_xyz.csv
 └── src/
     ├── validate_data.py
     ├── analyse_exploratoire.py
