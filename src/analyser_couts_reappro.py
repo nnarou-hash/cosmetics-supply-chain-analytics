@@ -10,6 +10,7 @@ Dépendance : bibliothèque standard Python uniquement.
 from __future__ import annotations
 
 import csv
+import math
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
@@ -60,7 +61,7 @@ def simuler_couts(profils, politique, hypotheses, nom_scenario):
             float(premiere["Forecast_Units"]) / jours_initiaux
             * (delai_initial + securite)
         )
-        stock = max(stock_ouverture, int(__import__("math").ceil(stock_cible_initial)))
+        stock = max(stock_ouverture, int(math.ceil(stock_cible_initial)))
         investissement_initial += (
             stock - stock_ouverture
         ) * float(premiere["Price_EUR"]) * hypotheses["cout_achat_sur_prix"]
