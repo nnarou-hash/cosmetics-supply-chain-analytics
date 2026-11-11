@@ -236,7 +236,7 @@ def main():
 
     scenarios = [simuler(groupes, jours) for jours in JOURS_SECURITE_TESTES]
     synthese = [{
-        "Scenario": "Historique observe",
+        "Scenario": "Historique observé",
         "Jours_Stock_Securite": "",
         "Jours_Revue": "",
         "Taux_Service": round(base_servies / base_demande, 6),
@@ -271,7 +271,7 @@ def main():
     exporter(OUTPUT / "comparaison_scenarios_reappro.csv", synthese)
     exporter(OUTPUT / "synthese_mensuelle_reappro.csv", retenu["lignes_mensuelles"])
 
-    print("SIMULATION DU REAPPROVISIONNEMENT")
+    print("SIMULATION DU RÉAPPROVISIONNEMENT")
     print(f"Observations SKU-mois uniques : {len(lignes)}")
     print(f"Taux de service historique : {base_servies / base_demande:.1%}")
     print(f"Taux de service avec {SCENARIO_RETENU} jours de securite : {retenu['taux_service']:.1%}")
