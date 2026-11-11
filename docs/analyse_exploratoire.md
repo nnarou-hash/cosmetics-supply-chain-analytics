@@ -121,6 +121,86 @@ Le scénario à 10 jours est retenu comme compromis illustratif, pas comme optim
 - Le scénario reprend les demandes et prévisions simulées connues du jeu ; il ne constitue pas un test prédictif en conditions réelles.
 - Les coûts de possession, passation, transport, obsolescence et rupture ne sont pas valorisés.
 
+## 10. Segmentation ABC/XYZ et stock de sécurité différencié
+
+### Méthode de classement
+
+- **ABC :** valeur de demande sur 36 mois = somme de la demande mensuelle multipliée par le prix unitaire simulé. Les SKU sont triés par valeur décroissante ; A couvre jusqu'à 80 % de la valeur cumulée, B jusqu'à 95 %, C le solde.
+- **XYZ :** coefficient de variation (écart-type de population / moyenne) de la demande mensuelle par SKU sur 36 mois. Le portefeuille est réparti en trois terciles empiriques : X (33 SKU, CV ≤ 0,2593), Y (33 SKU, 0,2593 < CV ≤ 0,3485), Z (34 SKU, CV > 0,3485).
+- Les seuils XYZ sont relatifs à ce jeu simulé ; ils ne doivent pas être interprétés comme des seuils universels.
+
+### Répartition
+
+| Classe ABC | SKU | Part de valeur de demande |
+|---|---:|---:|
+| A | 50 | 79,74 % |
+| B | 26 | 15,11 % |
+| C | 24 | 5,15 % |
+
+### Politique de stock de sécurité retenue
+
+| Segment | X · stable | Y · intermédiaire | Z · variable |
+|---|---:|---:|---:|
+| A · forte valeur | 10 j | 12 j | 15 j |
+| B · valeur moyenne | 8 j | 10 j | 13 j |
+| C · faible valeur | 7 j | 9 j | 12 j |
+
+### Résultats globaux
+
+| Indicateur | Réapprovisionnement uniforme (10 j) | Politique ABC/XYZ |
+|---|---:|---:|
+| Taux de service | 98,37 % | 98,64 % |
+| SKU-mois avec rupture | 10,08 % | 9,56 % |
+| Demande non satisfaite | 8 155 | 6 768 |
+| Couverture de fin de mois moyenne | 24,88 j | 25,96 j |
+| Commandes générées | 3 596 | 3 596 |
+| Unités commandées | 496 517 | 499 406 |
+
+La politique différenciée apporte +0,28 point de taux de service et réduit la demande non satisfaite de 1 387 unités (environ 17,0 %) par rapport au scénario uniforme. La couverture moyenne augmente d'environ 1,08 jour.
+
+### Résultats par classe ABC
+
+| Classe | SKU | Part de valeur | Service fixe 10 j | Service ABC/XYZ | Rupture fixe 10 j | Rupture ABC/XYZ |
+|---|---:|---:|---:|---:|---:|---:|
+| A | 50 | 79,74 % | 98,55 % | 99,07 % | 9,56 % | 6,50 % |
+| B | 26 | 15,11 % | 98,16 % | 98,01 % | 10,15 % | 11,75 % |
+| C | 24 | 5,15 % | 97,71 % | 97,38 % | 11,11 % | 13,54 % |
+
+La classe A, qui pèse près de 80 % de la valeur de demande, bénéficie de la priorité : son taux de service passe de 98,55 % à 99,07 %. Le service des classes B et C recule légèrement par rapport au scénario uniforme. La politique rend donc visible un arbitrage de priorité, et pas une amélioration identique pour tous les produits.
+
+### Détail de la matrice ABC/XYZ
+
+| Segment | SKU | Part de valeur | Stock de sécurité | Service simulé | SKU-mois avec rupture |
+|---|---:|---:|---:|---:|---:|
+| AX | 16 | 20,35 % | 10 j | 99,27 % | 7,12 % |
+| AY | 10 | 14,87 % | 12 j | 98,42 % | 8,89 % |
+| AZ | 24 | 44,52 % | 15 j | 99,19 % | 5,09 % |
+| BX | 11 | 7,24 % | 8 j | 97,74 % | 15,66 % |
+| BY | 11 | 5,80 % | 10 j | 98,72 % | 8,33 % |
+| BZ | 4 | 2,07 % | 13 j | 97,02 % | 10,42 % |
+| CX | 6 | 1,37 % | 7 j | 97,15 % | 19,44 % |
+| CY | 12 | 2,42 % | 9 j | 97,28 % | 13,66 % |
+| CZ | 6 | 1,36 % | 12 j | 97,79 % | 7,41 % |
+
+### Scénarios comparés
+
+| Scénario | Taux de service | SKU-mois avec rupture | Demande non satisfaite | Couverture fin de mois |
+|---|---:|---:|---:|---:|
+| Historique de référence | 91,46 % | 37,31 % | 42 656 | 8,6 j |
+| Réapprovisionnement uniforme · 10 jours | 98,37 % | 10,08 % | 8 155 | 24,9 j |
+| Première matrice ABC/XYZ | 98,34 % | 12,28 % | 8 271 | 24,9 j |
+| Politique ABC/XYZ retenue | 98,64 % | 9,56 % | 6 768 | 26,0 j |
+| Politique renforcée | 98,79 % | 8,67 % | 6 034 | 26,9 j |
+
+### Limites
+
+- Les données, prix, demandes, délais et stocks sont fictifs. La valeur ABC est une valeur de demande au prix simulé, pas une marge ou une valorisation comptable du stock.
+- Les classes XYZ sont des terciles calculés dans cet échantillon de 100 SKU, et les limites CV varient avec la composition du portefeuille.
+- Les jours de stock de sécurité ont été choisis par scénario et testés ; ils ne résultent pas d'une optimisation de coût total ou d'un niveau de service imposé.
+- La revue reste mensuelle, les délais sont déterministes et la demande intra-mensuelle est répartie uniformément.
+- Le stock initial du scénario ABC/XYZ est ajusté de 677 unités pour neutraliser l'effet de démarrage. Cet ajustement n'est pas une réception observée.
+- Les coûts de possession, de commande, de transport, d'obsolescence et de rupture ne sont pas valorisés.
+
 ## Reproductibilité
 
 Depuis la racine du dépôt :
