@@ -24,7 +24,8 @@ Le [tableau de bord en trois onglets](dashboard/cosmetics_supply_chain_dashboard
 - Chiffre d'affaires simulé : 23,74 M€ ;
 - taux de service : 91,5 % ;
 - taux de rupture : 37,3 % des SKU-mois ;
-- WAPE : 12,7 % ;
+- précision des prévisions pondérée : 87,3 % ;
+- WAPE : 12,7 % (erreur absolue pondérée) ;
 - couverture moyenne : 0,28 mois.
 
 Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
@@ -34,6 +35,8 @@ Voir le [rapport d'analyse exploratoire](docs/analyse_exploratoire.md).
 - **Taux de service** : unités servies / demande simulée.
 - **Couverture** : stock de clôture / prévision mensuelle.
 - **WAPE** : somme des erreurs absolues / somme de la demande.
+- **Précision des prévisions pondérée** : 1 − WAPE. Elle vaut 87,3 % dans le scénario simulé.
+- **Précision moyenne par SKU-mois** : moyenne simple du champ Forecast_Accuracy ; elle vaut 86,8 %. Elle diffère de la précision pondérée car les SKU-mois n'ont pas tous le même poids en volume.
 - **Biais de prévision** : (demande − prévision) / demande ; un biais positif signifie une sous-prévision.
 - **Sous-couverture** : couverture inférieure à 0,75 mois.
 - **Surstock** : stock de clôture supérieur à 125 % du stock cible.
